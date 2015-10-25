@@ -31,8 +31,9 @@
       <s:subsection>
         <s:subsection-title>Overview</s:subsection-title>
         <s:paragraph>
-          The io7m-junsigned attempts to provide missing functionality
-          for the treatment of unsigned types in Java.
+          The <s:term s:type="package">io7m-junsigned</s:term>
+          package attempts to provide missing functionality for the
+          treatment of unsigned types in Java.
         </s:paragraph>
       </s:subsection>
     </s:section>
