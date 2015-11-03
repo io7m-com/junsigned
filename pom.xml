@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.io7m.junsigned</groupId>
   <artifactId>io7m-junsigned</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
 
   <packaging>pom</packaging>
   <name>io7m-junsigned</name>
@@ -18,13 +18,14 @@
     <module>io7m-junsigned-checkstyle</module>
     <module>io7m-junsigned-core</module>
     <module>io7m-junsigned-documentation</module>
+    <module>io7m-junsigned-ranges</module>
   </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <com.io7m.siteReposDirectory>/com/io7m/junsigned</com.io7m.siteReposDirectory>
-    <com.io7m.siteDocumentationDirectory>/com/io7m/junsigned/io7m-junsigned-documentation</com.io7m.siteDocumentationDirectory>
+    <siteReposDirectory>/com/io7m/junsigned</siteReposDirectory>
+    <siteDocumentationDirectory>/com/io7m/junsigned/io7m-junsigned-documentation</siteDocumentationDirectory>
   </properties>
 
   <licenses>
@@ -86,6 +87,11 @@
         <groupId>com.io7m.junreachable</groupId>
         <artifactId>io7m-junreachable-core</artifactId>
         <version>[1.0.0, 2.0.0)</version>
+      </dependency>
+      <dependency>
+        <groupId>com.io7m.jranges</groupId>
+        <artifactId>io7m-jranges-core</artifactId>
+        <version>[2.0.0, 3.0.0)</version>
       </dependency>
 
       <dependency>

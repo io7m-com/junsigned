@@ -10,11 +10,11 @@
     <artifactId>io7m-junsigned</artifactId>
     <version>0.2.0</version>
   </parent>
-  <artifactId>io7m-junsigned-core</artifactId>
+  <artifactId>io7m-junsigned-ranges</artifactId>
 
   <packaging>jar</packaging>
-  <name>io7m-junsigned-core</name>
-  <description>Unsigned conversions (Core)</description>
+  <name>io7m-junsigned-ranges</name>
+  <description>Unsigned conversions (Ranges module)</description>
   <url>http://io7m.github.io/junsigned/</url>
 
   <scm>
@@ -27,6 +27,10 @@
     <dependency>
       <groupId>com.io7m.jnull</groupId>
       <artifactId>io7m-jnull-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.io7m.jranges</groupId>
+      <artifactId>io7m-jranges-core</artifactId>
     </dependency>
     <dependency>
       <groupId>com.io7m.junreachable</groupId>

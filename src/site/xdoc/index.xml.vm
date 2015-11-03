@@ -19,6 +19,7 @@
     <subsection name="Features">
       <ul>
         <li>Functions to convert unsigned int/long values to/from float/double values.</li>
+        <li>Unsigned variants of <a href="https://io7m.github.io/jranges">jranges</a> functions and types.</li>
         <li>100% unit test coverage.</li>
         <li>ISC license.</li>
       </ul>
