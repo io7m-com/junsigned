@@ -31,8 +31,8 @@
     <!-- Required to use the SuppressionCommentFilter above -->
     <module name="FileContentsHolder"/>
 
-    <module name="AbstractClassName"/>
     <!--
+    <module name="AbstractClassName"/>
     <module name="AnnotationUseStyle"/>
     -->
 
@@ -185,7 +185,6 @@
     <module name="ParenPad"/>
     <module name="RedundantImport"/>
     <module name="RedundantModifier"/>
-    <module name="RedundantThrows"/>
     <module name="RequireThis"/>
     <module name="SimplifyBooleanExpression"/>
     <module name="SimplifyBooleanReturn"/>
@@ -208,7 +207,11 @@
     </module>
 
     <module name="TypecastParenPad"/>
-    <module name="UncommentedMain"/>
+
+    <module name="UncommentedMain">
+      <property name="excludedClasses" value="Main$"/>
+    </module>
+
     <module name="UnusedImports"/>
     <module name="UpperEll"/>
     <module name="VisibilityModifier"/>
