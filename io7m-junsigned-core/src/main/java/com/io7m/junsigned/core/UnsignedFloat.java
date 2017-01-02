@@ -36,7 +36,8 @@ public final class UnsignedFloat
    * @return The given unsigned integer value as a {@code float}
    */
 
-  public static float fromUnsignedInt(final int x)
+  public static float fromUnsignedInt(
+    final int x)
   {
     return (float) ((long) x & 0xffffffffL);
   }
@@ -47,10 +48,10 @@ public final class UnsignedFloat
    * @return The given floating point value as an {@code int}
    */
 
-  public static int toUnsignedInt(final float f)
+  public static int toUnsignedInt(
+    final float f)
   {
     if (f > 2147483647.0f) {
-      final float sub = f - 2147483647.0f;
       return 1 + ((int) f) + 2147483647;
     }
 
@@ -63,7 +64,8 @@ public final class UnsignedFloat
    * @return The given unsigned integer value as a {@code float}
    */
 
-  public static float fromUnsignedLong(final long x)
+  public static float fromUnsignedLong(
+    final long x)
   {
     if ((x & 0x8000000000000000L) != 0L) {
       final long k = x & 0x7fffffffffffffffL;
@@ -80,13 +82,37 @@ public final class UnsignedFloat
    * @return The given floating point value as a {@code long}
    */
 
-  public static long toUnsignedLong(final float f)
+  public static long toUnsignedLong(
+    final float f)
   {
     if (f > 9223372036854775807.0f) {
-      final float sub = f - 9223372036854775807.0f;
       return 1L + ((long) f) + 9223372036854775807L;
     }
 
     return (long) f;
+  }
+
+  /**
+   * Calculate the unsigned modulo {@code x % y}.
+   *
+   * @param x The dividend
+   * @param y The divisor
+   *
+   * @return The unsigned modulo {@code x % y}
+   *
+   * @throws ArithmeticException Iff {@code y < 0}
+   */
+
+  public static float modulo(
+    final float x,
+    final float y)
+    throws ArithmeticException
+  {
+    if (y < 0.0f) {
+      throw new ArithmeticException("Divisor must be positive: " + y);
+    }
+
+    final float r = x % y;
+    return r < 0.0f ? r + y : r;
   }
 }
