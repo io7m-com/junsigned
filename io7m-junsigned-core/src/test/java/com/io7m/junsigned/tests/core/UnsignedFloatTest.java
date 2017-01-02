@@ -102,4 +102,45 @@ public final class UnsignedFloatTest
     Assert.assertEquals(r, k);
   }
 
+  @Test
+  public void testModulo()
+  {
+    for (float pa = 1.0f; pa < 64.0f; pa += 1.0f) {
+      final float bound_u = (float) Math.pow(2.0, pa);
+
+      for (float pb = 0.0f; pb < 64.0f; pb += 1.0f) {
+        {
+          final float x = (float) Math.pow(2.0, pb);
+          final float y = bound_u;
+          final float r = UnsignedFloat.modulo(x, y);
+          System.out.printf(
+            "%f mod %f = %f\n",
+            Double.valueOf(x),
+            Double.valueOf(y),
+            Double.valueOf(r));
+          Assert.assertTrue(r >= 0.0);
+          Assert.assertTrue(r < bound_u);
+        }
+
+        {
+          final float x = (float) -Math.pow(2.0, pb);
+          final float y = bound_u;
+          final float r = UnsignedFloat.modulo(x, y);
+          System.out.printf(
+            "%f mod %f = %f\n",
+            Double.valueOf(x),
+            Double.valueOf(y),
+            Double.valueOf(r));
+          Assert.assertTrue(r >= 0.0);
+          Assert.assertTrue(r <= bound_u);
+        }
+      }
+    }
+  }
+
+  @Test(expected = ArithmeticException.class)
+  public void testModuloNegativeDivisor()
+  {
+    UnsignedFloat.modulo(0.0f, -1.0f);
+  }
 }

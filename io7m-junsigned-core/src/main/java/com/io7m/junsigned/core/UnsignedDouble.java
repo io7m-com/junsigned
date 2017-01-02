@@ -93,4 +93,28 @@ public final class UnsignedDouble
 
     return (long) f;
   }
+
+  /**
+   * Calculate the unsigned modulo {@code x % y}.
+   *
+   * @param x The dividend
+   * @param y The divisor
+   *
+   * @return The unsigned modulo {@code x % y}
+   *
+   * @throws ArithmeticException Iff {@code y < 0}
+   */
+
+  public static double modulo(
+    final double x,
+    final double y)
+    throws ArithmeticException
+  {
+    if (y < 0.0) {
+      throw new ArithmeticException("Divisor must be positive: " + y);
+    }
+
+    final double r = x % y;
+    return r < 0.0 ? r + y : r;
+  }
 }

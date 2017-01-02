@@ -24,7 +24,8 @@ import java.math.BigInteger;
 
 public final class UnsignedDoubleTest
 {
-  @Test public void testIntUpperBound()
+  @Test
+  public void testIntUpperBound()
   {
     final BigInteger x =
       BigInteger.valueOf(2L).pow(32).subtract(BigInteger.ONE);
@@ -39,7 +40,8 @@ public final class UnsignedDoubleTest
     Assert.assertEquals((long) r, (long) k);
   }
 
-  @Test public void testIntExhaustive()
+  @Test
+  public void testIntExhaustive()
   {
     for (int e = 0; e <= 32; ++e) {
       final BigInteger x =
@@ -63,7 +65,8 @@ public final class UnsignedDoubleTest
     }
   }
 
-  @Test public void testLongExhaustive()
+  @Test
+  public void testLongExhaustive()
   {
     for (int e = 0; e <= 64; ++e) {
       final BigInteger x =
@@ -87,7 +90,8 @@ public final class UnsignedDoubleTest
     }
   }
 
-  @Test public void testLongUpperBound()
+  @Test
+  public void testLongUpperBound()
   {
     final BigInteger x =
       BigInteger.valueOf(2L).pow(64).subtract(BigInteger.ONE);
@@ -102,4 +106,45 @@ public final class UnsignedDoubleTest
     Assert.assertEquals(r, k);
   }
 
+  @Test
+  public void testModulo()
+  {
+    for (double pa = 1.0; pa < 64.0; pa += 1.0) {
+      final double bound_u = Math.pow(2.0, pa);
+
+      for (double pb = 0.0; pb < 64.0; pb += 1.0) {
+        {
+          final double x = Math.pow(2.0, pb);
+          final double y = bound_u;
+          final double r = UnsignedDouble.modulo(x, y);
+          System.out.printf(
+            "%f mod %f = %f\n",
+            Double.valueOf(x),
+            Double.valueOf(y),
+            Double.valueOf(r));
+          Assert.assertTrue(r >= 0.0);
+          Assert.assertTrue(r < bound_u);
+        }
+
+        {
+          final double x = -Math.pow(2.0, pb);
+          final double y = bound_u;
+          final double r = UnsignedDouble.modulo(x, y);
+          System.out.printf(
+            "%f mod %f = %f\n",
+            Double.valueOf(x),
+            Double.valueOf(y),
+            Double.valueOf(r));
+          Assert.assertTrue(r >= 0.0);
+          Assert.assertTrue(r <= bound_u);
+        }
+      }
+    }
+  }
+
+  @Test(expected = ArithmeticException.class)
+  public void testModuloNegativeDivisor()
+  {
+    UnsignedDouble.modulo(0.0, -1.0);
+  }
 }

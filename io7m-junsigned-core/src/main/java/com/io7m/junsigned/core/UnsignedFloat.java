@@ -93,4 +93,28 @@ public final class UnsignedFloat
 
     return (long) f;
   }
+
+  /**
+   * Calculate the unsigned modulo {@code x % y}.
+   *
+   * @param x The dividend
+   * @param y The divisor
+   *
+   * @return The unsigned modulo {@code x % y}
+   *
+   * @throws ArithmeticException Iff {@code y < 0}
+   */
+
+  public static float modulo(
+    final float x,
+    final float y)
+    throws ArithmeticException
+  {
+    if (y < 0.0f) {
+      throw new ArithmeticException("Divisor must be positive: " + y);
+    }
+
+    final float r = x % y;
+    return r < 0.0f ? r + y : r;
+  }
 }
