@@ -52,7 +52,6 @@ public final class UnsignedFloat
     final float f)
   {
     if (f > 2147483647.0f) {
-      final float sub = f - 2147483647.0f;
       return 1 + ((int) f) + 2147483647;
     }
 
@@ -87,7 +86,6 @@ public final class UnsignedFloat
     final float f)
   {
     if (f > 9223372036854775807.0f) {
-      final float sub = f - 9223372036854775807.0f;
       return 1L + ((long) f) + 9223372036854775807L;
     }
 
