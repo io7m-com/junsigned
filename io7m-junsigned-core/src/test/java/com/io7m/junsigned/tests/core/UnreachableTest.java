@@ -44,15 +44,27 @@ public final class UnreachableTest
   public void testUnsignedFloat()
     throws Exception
   {
-    UnreachableTest.execNoArgPrivateConstructor(
-      "com.io7m.junsigned.core.UnsignedFloat");
+    execNoArgPrivateConstructor("com.io7m.junsigned.core.UnsignedFloat");
   }
 
   @Test(expected = UnreachableCodeException.class)
   public void testUnsignedDouble()
     throws Exception
   {
-    UnreachableTest.execNoArgPrivateConstructor(
-      "com.io7m.junsigned.core.UnsignedDouble");
+    execNoArgPrivateConstructor("com.io7m.junsigned.core.UnsignedDouble");
+  }
+
+  @Test(expected = UnreachableCodeException.class)
+  public void testUnsignedInt()
+    throws Exception
+  {
+    execNoArgPrivateConstructor("com.io7m.junsigned.core.UnsignedInt");
+  }
+
+  @Test(expected = UnreachableCodeException.class)
+  public void testUnsignedLong()
+    throws Exception
+  {
+    execNoArgPrivateConstructor("com.io7m.junsigned.core.UnsignedLong");
   }
 }
