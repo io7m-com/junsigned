@@ -36,7 +36,8 @@ public final class UnsignedFloat
    * @return The given unsigned integer value as a {@code float}
    */
 
-  public static float fromUnsignedInt(final int x)
+  public static float fromUnsignedInt(
+    final int x)
   {
     return (float) ((long) x & 0xffffffffL);
   }
@@ -47,7 +48,8 @@ public final class UnsignedFloat
    * @return The given floating point value as an {@code int}
    */
 
-  public static int toUnsignedInt(final float f)
+  public static int toUnsignedInt(
+    final float f)
   {
     if (f > 2147483647.0f) {
       final float sub = f - 2147483647.0f;
@@ -63,7 +65,8 @@ public final class UnsignedFloat
    * @return The given unsigned integer value as a {@code float}
    */
 
-  public static float fromUnsignedLong(final long x)
+  public static float fromUnsignedLong(
+    final long x)
   {
     if ((x & 0x8000000000000000L) != 0L) {
       final long k = x & 0x7fffffffffffffffL;
@@ -80,7 +83,8 @@ public final class UnsignedFloat
    * @return The given floating point value as a {@code long}
    */
 
-  public static long toUnsignedLong(final float f)
+  public static long toUnsignedLong(
+    final float f)
   {
     if (f > 9223372036854775807.0f) {
       final float sub = f - 9223372036854775807.0f;
