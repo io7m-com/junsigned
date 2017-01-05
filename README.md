@@ -1,5 +1,5 @@
 junsigned
-==============
+===
 
 [![Build Status](https://travis-ci.org/io7m/junsigned.svg)](https://travis-ci.org/io7m/junsigned)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.io7m.junsigned/io7m-junsigned/badge.png)](https://maven-badges.herokuapp.com/maven-central/com.io7m.junsigned/io7m-junsigned)
