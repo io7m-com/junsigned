@@ -7,15 +7,19 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.io7m.junsigned</groupId>
-    <artifactId>io7m-junsigned</artifactId>
-    <version>1.0.0</version>
+    <artifactId>com.io7m.junsigned</artifactId>
+    <version>1.0.1</version>
   </parent>
-  <artifactId>io7m-junsigned-ranges</artifactId>
+  <artifactId>com.io7m.junsigned.core</artifactId>
 
   <packaging>bundle</packaging>
-  <name>io7m-junsigned-ranges</name>
-  <description>Unsigned conversions (Ranges module)</description>
+  <name>com.io7m.junsigned.core</name>
+  <description>Unsigned conversions (Core)</description>
   <url>http://io7m.github.io/junsigned/</url>
+
+  <properties>
+    <io7m.api.previousArtifactId>io7m-junsigned-core</io7m.api.previousArtifactId>
+  </properties>
 
   <scm>
     <url>${project.parent.scm.url}</url>
@@ -26,15 +30,11 @@
   <dependencies>
     <dependency>
       <groupId>com.io7m.jnull</groupId>
-      <artifactId>io7m-jnull-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.io7m.jranges</groupId>
-      <artifactId>io7m-jranges-core</artifactId>
+      <artifactId>com.io7m.jnull.core</artifactId>
     </dependency>
     <dependency>
       <groupId>com.io7m.junreachable</groupId>
-      <artifactId>io7m-junreachable-core</artifactId>
+      <artifactId>com.io7m.junreachable.core</artifactId>
     </dependency>
 
     <dependency>
@@ -59,7 +59,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Export-Package>com.io7m.junsigned.ranges</Export-Package>
+            <Export-Package>com.io7m.junsigned.core</Export-Package>
           </instructions>
         </configuration>
       </plugin>

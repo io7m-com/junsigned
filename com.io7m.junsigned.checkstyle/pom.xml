@@ -7,15 +7,19 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.io7m.junsigned</groupId>
-    <artifactId>io7m-junsigned</artifactId>
-    <version>1.0.0</version>
+    <artifactId>com.io7m.junsigned</artifactId>
+    <version>1.0.1</version>
   </parent>
-  <artifactId>io7m-junsigned-checkstyle</artifactId>
+  <artifactId>com.io7m.junsigned.checkstyle</artifactId>
 
   <packaging>jar</packaging>
-  <name>io7m-junsigned-checkstyle</name>
+  <name>com.io7m.junsigned.checkstyle</name>
   <description>Unsigned conversions (Checkstyle policy)</description>
   <url>http://io7m.github.io/junsigned/</url>
+
+  <properties>
+    <io7m.api.previousArtifactId>io7m-junsigned-checkstyle</io7m.api.previousArtifactId>
+  </properties>
 
   <scm>
     <url>${project.parent.scm.url}</url>
@@ -26,7 +30,7 @@
   <dependencies>
     <dependency>
       <groupId>com.io7m.jnull</groupId>
-      <artifactId>io7m-jnull-core</artifactId>
+      <artifactId>com.io7m.jnull.core</artifactId>
     </dependency>
   </dependencies>
 
