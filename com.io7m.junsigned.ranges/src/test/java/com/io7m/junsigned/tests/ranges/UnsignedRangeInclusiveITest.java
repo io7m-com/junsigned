@@ -26,12 +26,13 @@ import java.math.BigInteger;
 
 public final class UnsignedRangeInclusiveITest
 {
-  @Test public void testEquals_0()
+  @Test
+  public void testEquals_0()
   {
-    final UnsignedRangeInclusiveI r00 = new UnsignedRangeInclusiveI(0, 0);
-    final UnsignedRangeInclusiveI r00a = new UnsignedRangeInclusiveI(0, 0);
-    final UnsignedRangeInclusiveI r01 = new UnsignedRangeInclusiveI(0, 1);
-    final UnsignedRangeInclusiveI r12 = new UnsignedRangeInclusiveI(1, 2);
+    final UnsignedRangeInclusiveI r00 = UnsignedRangeInclusiveI.of(0, 0);
+    final UnsignedRangeInclusiveI r00a = UnsignedRangeInclusiveI.of(0, 0);
+    final UnsignedRangeInclusiveI r01 = UnsignedRangeInclusiveI.of(0, 1);
+    final UnsignedRangeInclusiveI r12 = UnsignedRangeInclusiveI.of(1, 2);
 
     Assert.assertEquals(r00, r00);
     Assert.assertEquals(r00a, r00);
@@ -44,12 +45,13 @@ public final class UnsignedRangeInclusiveITest
     Assert.assertNotEquals(r00, r12);
   }
 
-  @Test public void testHashCode_0()
+  @Test
+  public void testHashCode_0()
   {
-    final UnsignedRangeInclusiveI r00 = new UnsignedRangeInclusiveI(0, 0);
-    final UnsignedRangeInclusiveI r00a = new UnsignedRangeInclusiveI(0, 0);
-    final UnsignedRangeInclusiveI r01 = new UnsignedRangeInclusiveI(0, 5);
-    final UnsignedRangeInclusiveI r12 = new UnsignedRangeInclusiveI(1, 2);
+    final UnsignedRangeInclusiveI r00 = UnsignedRangeInclusiveI.of(0, 0);
+    final UnsignedRangeInclusiveI r00a = UnsignedRangeInclusiveI.of(0, 0);
+    final UnsignedRangeInclusiveI r01 = UnsignedRangeInclusiveI.of(0, 5);
+    final UnsignedRangeInclusiveI r12 = UnsignedRangeInclusiveI.of(1, 2);
 
     Assert.assertEquals((long) r00.hashCode(), (long) r00.hashCode());
     Assert.assertEquals((long) r00a.hashCode(), (long) r00.hashCode());
@@ -59,12 +61,13 @@ public final class UnsignedRangeInclusiveITest
     Assert.assertNotEquals((long) r00.hashCode(), (long) r12.hashCode());
   }
 
-  @Test public void testToString_0()
+  @Test
+  public void testToString_0()
   {
-    final UnsignedRangeInclusiveI r00 = new UnsignedRangeInclusiveI(0, 0);
-    final UnsignedRangeInclusiveI r00a = new UnsignedRangeInclusiveI(0, 0);
-    final UnsignedRangeInclusiveI r01 = new UnsignedRangeInclusiveI(0, 1);
-    final UnsignedRangeInclusiveI r12 = new UnsignedRangeInclusiveI(1, 2);
+    final UnsignedRangeInclusiveI r00 = UnsignedRangeInclusiveI.of(0, 0);
+    final UnsignedRangeInclusiveI r00a = UnsignedRangeInclusiveI.of(0, 0);
+    final UnsignedRangeInclusiveI r01 = UnsignedRangeInclusiveI.of(0, 1);
+    final UnsignedRangeInclusiveI r12 = UnsignedRangeInclusiveI.of(1, 2);
 
     Assert.assertEquals(r00.toString(), r00.toString());
     Assert.assertEquals(r00a.toString(), r00.toString());
@@ -74,27 +77,29 @@ public final class UnsignedRangeInclusiveITest
     Assert.assertNotEquals(r00.toString(), r12.toString());
   }
 
-  @Test public void testIncluded()
+  @Test
+  public void testIncluded()
   {
     Assert.assertTrue(
-      new UnsignedRangeInclusiveI(
+      UnsignedRangeInclusiveI.of(
         0, 10).isIncludedIn(
-        new UnsignedRangeInclusiveI(
+        UnsignedRangeInclusiveI.of(
           0, 10)));
 
     Assert.assertFalse(
-      new UnsignedRangeInclusiveI(
+      UnsignedRangeInclusiveI.of(
         0, 10).isIncludedIn(
-        new UnsignedRangeInclusiveI(
+        UnsignedRangeInclusiveI.of(
           0, 9)));
     Assert.assertFalse(
-      new UnsignedRangeInclusiveI(
+      UnsignedRangeInclusiveI.of(
         0, 10).isIncludedIn(
-        new UnsignedRangeInclusiveI(
+        UnsignedRangeInclusiveI.of(
           1, 10)));
   }
 
-  @Test public void testPredefined()
+  @Test
+  public void testPredefined()
   {
     Assert.assertTrue(Ranges.NATURAL_INTEGER.includesValue(0));
     Assert.assertTrue(Ranges.NATURAL_INTEGER.includesValue(Integer.MAX_VALUE));
@@ -105,17 +110,19 @@ public final class UnsignedRangeInclusiveITest
     Assert.assertFalse(Ranges.POSITIVE_INTEGER.includesValue(0));
   }
 
-  @Test public void testRange_0()
+  @Test
+  public void testRange_0()
   {
-    final UnsignedRangeInclusiveI r = new UnsignedRangeInclusiveI(0, 9);
-    Assert.assertEquals(0L, (long) r.getLower());
-    Assert.assertEquals(9L, (long) r.getUpper());
-    Assert.assertEquals(10L, (long) r.getInterval());
+    final UnsignedRangeInclusiveI r = UnsignedRangeInclusiveI.of(0, 9);
+    Assert.assertEquals(0L, (long) r.lower());
+    Assert.assertEquals(9L, (long) r.upper());
+    Assert.assertEquals(10L, (long) r.interval());
   }
 
-  @SuppressWarnings("unused") @Test(expected = RangeCheckException.class)
+  @SuppressWarnings("unused")
+  @Test(expected = RangeCheckException.class)
   public void testRangeBad_0()
   {
-    new UnsignedRangeInclusiveI(1, 0);
+    UnsignedRangeInclusiveI.of(1, 0);
   }
 }

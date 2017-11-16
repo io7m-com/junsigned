@@ -17,21 +17,4 @@
   <description>Unsigned conversions (Checkstyle policy)</description>
   <url>http://io7m.github.io/junsigned/</url>
 
-  <properties>
-    <io7m.api.previousArtifactId>io7m-junsigned-checkstyle</io7m.api.previousArtifactId>
-  </properties>
-
-  <scm>
-    <url>${project.parent.scm.url}</url>
-    <connection>${project.parent.scm.connection}</connection>
-    <developerConnection>${project.parent.scm.developerConnection}</developerConnection>
-  </scm>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.io7m.jnull</groupId>
-      <artifactId>com.io7m.jnull.core</artifactId>
-    </dependency>
-  </dependencies>
-
 </project>

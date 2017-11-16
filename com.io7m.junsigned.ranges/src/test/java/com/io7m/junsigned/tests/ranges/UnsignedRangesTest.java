@@ -22,39 +22,43 @@ import org.junit.Test;
 
 public final class UnsignedRangesTest
 {
-  @Test public void testNaturalInteger()
+  @Test
+  public void testNaturalInteger()
   {
     Assert.assertEquals(
-      0L, (long) UnsignedRanges.UNSIGNED_NATURAL_INTEGER.getLower());
+      0L, (long) UnsignedRanges.UNSIGNED_NATURAL_INTEGER.lower());
     Assert.assertEquals(
       (long) Integer.parseUnsignedInt("4294967295"),
-      (long) UnsignedRanges.UNSIGNED_NATURAL_INTEGER.getUpper());
+      (long) UnsignedRanges.UNSIGNED_NATURAL_INTEGER.upper());
   }
 
-  @Test public void testNaturalLong()
+  @Test
+  public void testNaturalLong()
   {
     Assert.assertEquals(
-      0L, UnsignedRanges.UNSIGNED_NATURAL_LONG.getLower());
+      0L, UnsignedRanges.UNSIGNED_NATURAL_LONG.lower());
     Assert.assertEquals(
       Long.parseUnsignedLong("18446744073709551615"),
-      UnsignedRanges.UNSIGNED_NATURAL_LONG.getUpper());
+      UnsignedRanges.UNSIGNED_NATURAL_LONG.upper());
   }
 
-  @Test public void testPositiveInteger()
+  @Test
+  public void testPositiveInteger()
   {
     Assert.assertEquals(
-      1L, (long) UnsignedRanges.UNSIGNED_POSITIVE_INTEGER.getLower());
+      1L, (long) UnsignedRanges.UNSIGNED_POSITIVE_INTEGER.lower());
     Assert.assertEquals(
       (long) Integer.parseUnsignedInt("4294967295"),
-      (long) UnsignedRanges.UNSIGNED_POSITIVE_INTEGER.getUpper());
+      (long) UnsignedRanges.UNSIGNED_POSITIVE_INTEGER.upper());
   }
 
-  @Test public void testPositiveLong()
+  @Test
+  public void testPositiveLong()
   {
     Assert.assertEquals(
-      1L, UnsignedRanges.UNSIGNED_POSITIVE_LONG.getLower());
+      1L, UnsignedRanges.UNSIGNED_POSITIVE_LONG.lower());
     Assert.assertEquals(
       Long.parseUnsignedLong("18446744073709551615"),
-      UnsignedRanges.UNSIGNED_POSITIVE_LONG.getUpper());
+      UnsignedRanges.UNSIGNED_POSITIVE_LONG.upper());
   }
 }

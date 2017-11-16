@@ -25,12 +25,13 @@ import java.math.BigInteger;
 
 public final class UnsignedRangeInclusiveLTest
 {
-  @Test public void testEquals_0()
+  @Test
+  public void testEquals_0()
   {
-    final UnsignedRangeInclusiveL r00 = new UnsignedRangeInclusiveL(0L, 0L);
-    final UnsignedRangeInclusiveL r00a = new UnsignedRangeInclusiveL(0L, 0L);
-    final UnsignedRangeInclusiveL r01 = new UnsignedRangeInclusiveL(0L, 1L);
-    final UnsignedRangeInclusiveL r12 = new UnsignedRangeInclusiveL(1L, 2L);
+    final UnsignedRangeInclusiveL r00 = UnsignedRangeInclusiveL.of(0L, 0L);
+    final UnsignedRangeInclusiveL r00a = UnsignedRangeInclusiveL.of(0L, 0L);
+    final UnsignedRangeInclusiveL r01 = UnsignedRangeInclusiveL.of(0L, 1L);
+    final UnsignedRangeInclusiveL r12 = UnsignedRangeInclusiveL.of(1L, 2L);
 
     Assert.assertEquals(r00, r00);
     Assert.assertEquals(r00a, r00);
@@ -41,12 +42,13 @@ public final class UnsignedRangeInclusiveLTest
     Assert.assertNotEquals(r12, r00);
   }
 
-  @Test public void testHashCode_0()
+  @Test
+  public void testHashCode_0()
   {
-    final UnsignedRangeInclusiveL r00 = new UnsignedRangeInclusiveL(0L, 0L);
-    final UnsignedRangeInclusiveL r00a = new UnsignedRangeInclusiveL(0L, 0L);
-    final UnsignedRangeInclusiveL r01 = new UnsignedRangeInclusiveL(0L, 1L);
-    final UnsignedRangeInclusiveL r12 = new UnsignedRangeInclusiveL(1L, 2L);
+    final UnsignedRangeInclusiveL r00 = UnsignedRangeInclusiveL.of(0L, 0L);
+    final UnsignedRangeInclusiveL r00a = UnsignedRangeInclusiveL.of(0L, 0L);
+    final UnsignedRangeInclusiveL r01 = UnsignedRangeInclusiveL.of(0L, 1L);
+    final UnsignedRangeInclusiveL r12 = UnsignedRangeInclusiveL.of(1L, 2L);
 
     Assert.assertEquals((long) r00.hashCode(), (long) r00.hashCode());
     Assert.assertEquals((long) r00a.hashCode(), (long) r00.hashCode());
@@ -56,12 +58,13 @@ public final class UnsignedRangeInclusiveLTest
     Assert.assertNotEquals((long) r00.hashCode(), (long) r12.hashCode());
   }
 
-  @Test public void testToString_0()
+  @Test
+  public void testToString_0()
   {
-    final UnsignedRangeInclusiveL r00 = new UnsignedRangeInclusiveL(0L, 0L);
-    final UnsignedRangeInclusiveL r00a = new UnsignedRangeInclusiveL(0L, 0L);
-    final UnsignedRangeInclusiveL r01 = new UnsignedRangeInclusiveL(0L, 1L);
-    final UnsignedRangeInclusiveL r12 = new UnsignedRangeInclusiveL(1L, 2L);
+    final UnsignedRangeInclusiveL r00 = UnsignedRangeInclusiveL.of(0L, 0L);
+    final UnsignedRangeInclusiveL r00a = UnsignedRangeInclusiveL.of(0L, 0L);
+    final UnsignedRangeInclusiveL r01 = UnsignedRangeInclusiveL.of(0L, 1L);
+    final UnsignedRangeInclusiveL r12 = UnsignedRangeInclusiveL.of(1L, 2L);
 
     Assert.assertEquals(r00.toString(), r00.toString());
     Assert.assertEquals(r00a.toString(), r00.toString());
@@ -71,52 +74,56 @@ public final class UnsignedRangeInclusiveLTest
     Assert.assertNotEquals(r00.toString(), r12.toString());
   }
 
-  @Test public void testIncluded()
+  @Test
+  public void testIncluded()
   {
     Assert.assertTrue(
-      new UnsignedRangeInclusiveL(
+      UnsignedRangeInclusiveL.of(
         0L,
         10L).isIncludedIn(
-        new UnsignedRangeInclusiveL(
+        UnsignedRangeInclusiveL.of(
           0L,
           10L)));
 
     Assert.assertFalse(
-      new UnsignedRangeInclusiveL(
+      UnsignedRangeInclusiveL.of(
         0L,
         10L).isIncludedIn(
-        new UnsignedRangeInclusiveL(
+        UnsignedRangeInclusiveL.of(
           0L,
           9L)));
     Assert.assertFalse(
-      new UnsignedRangeInclusiveL(
+      UnsignedRangeInclusiveL.of(
         0L,
         10L).isIncludedIn(
-        new UnsignedRangeInclusiveL(
+        UnsignedRangeInclusiveL.of(
           1L,
           10L)));
   }
 
-  @Test public void testRange_0()
+  @Test
+  public void testRange_0()
   {
-    final UnsignedRangeInclusiveL r = new UnsignedRangeInclusiveL(0L, 9L);
-    Assert.assertEquals(0L, r.getLower());
-    Assert.assertEquals(9L, r.getUpper());
-    Assert.assertEquals(10L, r.getInterval());
+    final UnsignedRangeInclusiveL r = UnsignedRangeInclusiveL.of(0L, 9L);
+    Assert.assertEquals(0L, r.lower());
+    Assert.assertEquals(9L, r.upper());
+    Assert.assertEquals(10L, r.interval());
   }
 
-  @Test public void testRange_1()
+  @Test
+  public void testRange_1()
   {
-    final UnsignedRangeInclusiveL r = new UnsignedRangeInclusiveL(0L, 9L);
+    final UnsignedRangeInclusiveL r = UnsignedRangeInclusiveL.of(0L, 9L);
     Assert.assertFalse(r.includesValue(-1L));
     Assert.assertFalse(r.includesValue(10L));
     Assert.assertTrue(r.includesValue(0L));
     Assert.assertTrue(r.includesValue(9L));
   }
 
-  @SuppressWarnings("unused") @Test(expected = RangeCheckException.class)
+  @SuppressWarnings("unused")
+  @Test(expected = RangeCheckException.class)
   public void testRangeBad_0()
   {
-    new UnsignedRangeInclusiveL(1L, 0L);
+    UnsignedRangeInclusiveL.of(1L, 0L);
   }
 }

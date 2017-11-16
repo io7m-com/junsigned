@@ -51,14 +51,14 @@ public final class UnsignedRanges
   public static final UnsignedRangeInclusiveI UNSIGNED_POSITIVE_INTEGER;
 
   static {
-    UNSIGNED_POSITIVE_LONG = new UnsignedRangeInclusiveL(
+    UNSIGNED_POSITIVE_LONG = UnsignedRangeInclusiveL.of(
       1L, 0b1111111111111111111111111111111111111111111111111111111111111111L);
-    UNSIGNED_NATURAL_LONG = new UnsignedRangeInclusiveL(
+    UNSIGNED_NATURAL_LONG = UnsignedRangeInclusiveL.of(
       0L, 0b1111111111111111111111111111111111111111111111111111111111111111L);
     UNSIGNED_POSITIVE_INTEGER =
-      new UnsignedRangeInclusiveI(1, 0b11111111111111111111111111111111);
+      UnsignedRangeInclusiveI.of(1, 0b11111111111111111111111111111111);
     UNSIGNED_NATURAL_INTEGER =
-      new UnsignedRangeInclusiveI(0, 0b11111111111111111111111111111111);
+      UnsignedRangeInclusiveI.of(0, 0b11111111111111111111111111111111);
   }
 
   private UnsignedRanges()

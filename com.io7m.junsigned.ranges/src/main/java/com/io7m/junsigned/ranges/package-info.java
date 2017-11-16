@@ -20,5 +20,5 @@
  * @see com.io7m.jranges.RangeCheck
  */
 
-@com.io7m.jnull.NonNullByDefault package com.io7m.junsigned.ranges;
+package com.io7m.junsigned.ranges;
 
