@@ -14,7 +14,7 @@
  * IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-package com.io7m.junsigned.tests.ranges;
+package com.io7m.junsigned.tests;
 
 import com.io7m.jranges.RangeCheckException;
 import com.io7m.jranges.Ranges;

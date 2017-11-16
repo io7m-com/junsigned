@@ -14,7 +14,7 @@
  * IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-package com.io7m.junsigned.tests.core;
+package com.io7m.junsigned.tests;
 
 import com.io7m.junsigned.core.UnsignedDouble;
 import org.junit.Assert;

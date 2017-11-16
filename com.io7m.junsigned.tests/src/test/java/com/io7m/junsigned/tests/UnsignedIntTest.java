@@ -14,43 +14,43 @@
  * IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-package com.io7m.junsigned.tests.core;
+package com.io7m.junsigned.tests;
 
-import com.io7m.junsigned.core.UnsignedLong;
+import com.io7m.junsigned.core.UnsignedInt;
 import org.junit.Assert;
 import org.junit.Test;
 
-public final class UnsignedLongTest
+public final class UnsignedIntTest
 {
   @Test
   public void testModulo()
   {
-    for (long pa = 1L; pa < 63L; pa += 1L) {
-      final long bound_u = (long) Math.pow(2, pa);
+    for (int pa = 1; pa < 63; pa += 1) {
+      final int bound_u = (int) Math.pow(2, pa);
 
-      for (long pb = 0L; pb < 63L; pb += 1L) {
+      for (int pb = 0; pb < 63L; pb += 1) {
         {
-          final long x = (long) Math.pow(2, pb);
-          final long y = bound_u;
-          final long r = UnsignedLong.modulo(x, y);
+          final int x = (int) Math.pow(2, pb);
+          final int y = bound_u;
+          final int r = UnsignedInt.modulo(x, y);
           System.out.printf(
             "%d mod %d = %d\n",
-            Long.valueOf(x),
-            Long.valueOf(y),
-            Long.valueOf(r));
+            Integer.valueOf(x),
+            Integer.valueOf(y),
+            Integer.valueOf(r));
           Assert.assertTrue(r >= 0);
           Assert.assertTrue(r < bound_u);
         }
 
         {
-          final long x = (long) -Math.pow(2, pb);
-          final long y = bound_u;
-          final long r = UnsignedLong.modulo(x, y);
+          final int x = (int) -Math.pow(2, pb);
+          final int y = bound_u;
+          final int r = UnsignedInt.modulo(x, y);
           System.out.printf(
             "%d mod %d = %d\n",
-            Long.valueOf(x),
-            Long.valueOf(y),
-            Long.valueOf(r));
+            Integer.valueOf(x),
+            Integer.valueOf(y),
+            Integer.valueOf(r));
           Assert.assertTrue(r >= 0);
           Assert.assertTrue(r <= bound_u);
         }
@@ -61,6 +61,6 @@ public final class UnsignedLongTest
   @Test(expected = ArithmeticException.class)
   public void testModuloNegativeDivisor()
   {
-    UnsignedLong.modulo(0L, -1L);
+    UnsignedInt.modulo(0, -1);
   }
 }

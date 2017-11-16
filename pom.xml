@@ -25,6 +25,7 @@
     <module>com.io7m.junsigned.core</module>
     <module>com.io7m.junsigned.documentation</module>
     <module>com.io7m.junsigned.ranges</module>
+    <module>com.io7m.junsigned.tests</module>
   </modules>
 
   <properties>

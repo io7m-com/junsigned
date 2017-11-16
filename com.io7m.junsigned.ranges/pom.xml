@@ -32,12 +32,6 @@
       <artifactId>value</artifactId>
       <scope>provided</scope>
     </dependency>
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <build>
@@ -73,12 +67,6 @@
             <Export-Package>com.io7m.junsigned.ranges</Export-Package>
           </instructions>
         </configuration>
-      </plugin>
-
-      <!-- Determine test coverage -->
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
