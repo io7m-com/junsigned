@@ -37,8 +37,6 @@
         <c:change compatible="false" date="2017-11-16T00:00:00+00:00" summary="All modules are now Java 9 modules. JDK 9 is now required."/>
         <c:change compatible="false" date="2017-11-16T00:00:00+00:00" summary="Removed dependency on com.io7m.jnull."/>
         <c:change compatible="false" date="2017-11-16T00:00:00+00:00" summary="Replace implementation with Immutables.org generated types"/>
-        <c:change compatible="false" date="2017-11-16T00:00:00+00:00" summary="All modules are now Java 9 modules. JDK 9 is now required."/>
-        <c:change compatible="false" date="2017-11-16T15:37:15+00:00" summary="Removed dependency on com.io7m.jnull."/>
       </c:changes>
     </c:release>
   </c:releases>
