@@ -18,5 +18,5 @@
  * Core types and functions.
  */
 
-@com.io7m.jnull.NonNullByDefault package com.io7m.junsigned.core;
+package com.io7m.junsigned.core;
 

@@ -16,9 +16,10 @@
 
 package com.io7m.junsigned.ranges;
 
-import com.io7m.jnull.NullCheck;
 import com.io7m.jranges.RangeCheckException;
 import com.io7m.junreachable.UnreachableCodeException;
+
+import java.util.Objects;
 
 /**
  * <p>Functions for enforcing range constraints at run time.</p>
@@ -60,8 +61,8 @@ public final class UnsignedRangeCheck
     final long in_lower,
     final String lower_name)
   {
-    NullCheck.notNull(x_name, "Value name");
-    NullCheck.notNull(lower_name, "Lower bound name");
+    Objects.requireNonNull(x_name, "Value name");
+    Objects.requireNonNull(lower_name, "Lower bound name");
 
     if (Long.compareUnsigned(x, in_lower) > 0) {
       return x;
@@ -98,8 +99,8 @@ public final class UnsignedRangeCheck
     final long in_lower,
     final String lower_name)
   {
-    NullCheck.notNull(x_name, "Value name");
-    NullCheck.notNull(lower_name, "Lower bound name");
+    Objects.requireNonNull(x_name, "Value name");
+    Objects.requireNonNull(lower_name, "Lower bound name");
 
     if (Long.compareUnsigned(x, in_lower) >= 0) {
       return x;
@@ -136,8 +137,8 @@ public final class UnsignedRangeCheck
     final long in_upper,
     final String upper_name)
   {
-    NullCheck.notNull(x_name, "Value name");
-    NullCheck.notNull(upper_name, "Upper bound name");
+    Objects.requireNonNull(x_name, "Value name");
+    Objects.requireNonNull(upper_name, "Upper bound name");
 
     if (Long.compareUnsigned(x, in_upper) < 0) {
       return x;
@@ -174,8 +175,8 @@ public final class UnsignedRangeCheck
     final long in_upper,
     final String upper_name)
   {
-    NullCheck.notNull(x_name, "Value name");
-    NullCheck.notNull(upper_name, "Upper bound name");
+    Objects.requireNonNull(x_name, "Value name");
+    Objects.requireNonNull(upper_name, "Upper bound name");
 
     if (Long.compareUnsigned(x, in_upper) <= 0) {
       return x;
@@ -212,8 +213,8 @@ public final class UnsignedRangeCheck
     final int in_lower,
     final String lower_name)
   {
-    NullCheck.notNull(x_name, "Value name");
-    NullCheck.notNull(lower_name, "Lower bound name");
+    Objects.requireNonNull(x_name, "Value name");
+    Objects.requireNonNull(lower_name, "Lower bound name");
 
     if (Integer.compareUnsigned(x, in_lower) > 0) {
       return x;
@@ -250,8 +251,8 @@ public final class UnsignedRangeCheck
     final int in_lower,
     final String lower_name)
   {
-    NullCheck.notNull(x_name, "Value name");
-    NullCheck.notNull(lower_name, "Lower bound name");
+    Objects.requireNonNull(x_name, "Value name");
+    Objects.requireNonNull(lower_name, "Lower bound name");
 
     if (Integer.compareUnsigned(x, in_lower) >= 0) {
       return x;
@@ -288,8 +289,8 @@ public final class UnsignedRangeCheck
     final int in_upper,
     final String upper_name)
   {
-    NullCheck.notNull(x_name, "Value name");
-    NullCheck.notNull(upper_name, "Upper bound name");
+    Objects.requireNonNull(x_name, "Value name");
+    Objects.requireNonNull(upper_name, "Upper bound name");
 
     if (Integer.compareUnsigned(x, in_upper) < 0) {
       return x;
@@ -326,8 +327,8 @@ public final class UnsignedRangeCheck
     final int in_upper,
     final String upper_name)
   {
-    NullCheck.notNull(x_name, "Value name");
-    NullCheck.notNull(upper_name, "Upper bound name");
+    Objects.requireNonNull(x_name, "Value name");
+    Objects.requireNonNull(upper_name, "Upper bound name");
 
     if (Integer.compareUnsigned(x, in_upper) <= 0) {
       return x;
@@ -364,9 +365,9 @@ public final class UnsignedRangeCheck
     final UnsignedRangeInclusiveL range,
     final String range_name)
   {
-    NullCheck.notNull(x_name, "Value name");
-    NullCheck.notNull(range, "Range");
-    NullCheck.notNull(range_name, "Range name");
+    Objects.requireNonNull(x_name, "Value name");
+    Objects.requireNonNull(range, "Range");
+    Objects.requireNonNull(range_name, "Range name");
 
     if (range.includesValue(x)) {
       return x;
@@ -374,10 +375,10 @@ public final class UnsignedRangeCheck
 
     final String message = String.format(
       "%s <= %s (%s) <= %s (%s) == false",
-      Long.toUnsignedString(range.getLower()),
+      Long.toUnsignedString(range.lower()),
       x_name,
       Long.toUnsignedString(x),
-      Long.toUnsignedString(range.getUpper()),
+      Long.toUnsignedString(range.upper()),
       range_name);
     assert message != null;
     throw new RangeCheckException(message);
@@ -404,9 +405,9 @@ public final class UnsignedRangeCheck
     final UnsignedRangeInclusiveI range,
     final String range_name)
   {
-    NullCheck.notNull(x_name, "Value name");
-    NullCheck.notNull(range, "Range");
-    NullCheck.notNull(range_name, "Range name");
+    Objects.requireNonNull(x_name, "Value name");
+    Objects.requireNonNull(range, "Range");
+    Objects.requireNonNull(range_name, "Range name");
 
     if (range.includesValue(x)) {
       return x;
@@ -414,10 +415,10 @@ public final class UnsignedRangeCheck
 
     final String message = String.format(
       "%s <= %s (%s) <= %s (%s) == false",
-      Integer.toUnsignedString(range.getLower()),
+      Integer.toUnsignedString(range.lower()),
       x_name,
       Integer.toUnsignedString(x),
-      Integer.toUnsignedString(range.getUpper()),
+      Integer.toUnsignedString(range.upper()),
       range_name);
     assert message != null;
     throw new RangeCheckException(message);
@@ -444,10 +445,10 @@ public final class UnsignedRangeCheck
     final UnsignedRangeInclusiveL outer,
     final String outer_name)
   {
-    NullCheck.notNull(inner, "Inner range");
-    NullCheck.notNull(inner_name, "Inner range name");
-    NullCheck.notNull(outer, "Outer range");
-    NullCheck.notNull(outer_name, "Outer range name");
+    Objects.requireNonNull(inner, "Inner range");
+    Objects.requireNonNull(inner_name, "Inner range name");
+    Objects.requireNonNull(outer, "Outer range");
+    Objects.requireNonNull(outer_name, "Outer range name");
 
     if (inner.isIncludedIn(outer)) {
       return inner;
@@ -484,10 +485,10 @@ public final class UnsignedRangeCheck
     final UnsignedRangeInclusiveI outer,
     final String outer_name)
   {
-    NullCheck.notNull(inner, "Inner range");
-    NullCheck.notNull(inner_name, "Inner range name");
-    NullCheck.notNull(outer, "Outer range");
-    NullCheck.notNull(outer_name, "Outer range name");
+    Objects.requireNonNull(inner, "Inner range");
+    Objects.requireNonNull(inner_name, "Inner range name");
+    Objects.requireNonNull(outer, "Outer range");
+    Objects.requireNonNull(outer_name, "Outer range name");
 
     if (inner.isIncludedIn(outer)) {
       return inner;

@@ -15,8 +15,12 @@
  */
 
 /**
- * Checkstyle policy.
+ * Unsigned conversions (Core)
  */
 
-package com.io7m.junsigned.checkstyle;
+module com.io7m.junsigned.core
+{
+  requires com.io7m.junreachable.core;
 
+  exports com.io7m.junsigned.core;
+}

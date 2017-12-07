@@ -15,8 +15,15 @@
  */
 
 /**
- * Checkstyle policy.
+ * Unsigned conversions (Ranges module)
  */
 
-package com.io7m.junsigned.checkstyle;
+module com.io7m.junsigned.ranges
+{
+  requires static org.immutables.value;
 
+  requires com.io7m.junreachable.core;
+  requires com.io7m.jranges.core;
+
+  exports com.io7m.junsigned.ranges;
+}

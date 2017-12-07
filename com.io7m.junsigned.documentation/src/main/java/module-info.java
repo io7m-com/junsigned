@@ -15,8 +15,17 @@
  */
 
 /**
- * Checkstyle policy.
+ * Unsigned conversions (Documentation)
  */
 
-package com.io7m.junsigned.checkstyle;
+module com.io7m.junsigned.documentation
+{
+  requires static org.immutables.value;
 
+  requires com.io7m.jranges.core;
+  requires com.io7m.junreachable.core;
+  requires com.io7m.junsigned.core;
+  requires com.io7m.junsigned.ranges;
+
+  exports com.io7m.junsigned.documentation;
+}
