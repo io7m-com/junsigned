@@ -1,0 +1,1 @@
+packageSearchIndex = [{"m":"com.io7m.junsigned.core","l":"com.io7m.junsigned.core"},{"m":"com.io7m.junsigned.documentation","l":"com.io7m.junsigned.documentation"},{"m":"com.io7m.junsigned.ranges","l":"com.io7m.junsigned.ranges"}]
