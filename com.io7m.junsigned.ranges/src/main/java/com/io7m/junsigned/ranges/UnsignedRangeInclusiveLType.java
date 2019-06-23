@@ -16,7 +16,7 @@
 
 package com.io7m.junsigned.ranges;
 
-import com.io7m.jranges.RangeImmutableStyleType;
+import com.io7m.immutables.styles.ImmutablesStyleType;
 import org.immutables.value.Value;
 
 import java.util.Objects;
@@ -25,7 +25,7 @@ import java.util.Objects;
  * An inclusive range with {@code long} components.
  */
 
-@RangeImmutableStyleType
+@ImmutablesStyleType
 @Value.Immutable
 public interface UnsignedRangeInclusiveLType
 {

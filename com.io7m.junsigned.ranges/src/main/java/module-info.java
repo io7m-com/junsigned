@@ -20,6 +20,7 @@
 
 module com.io7m.junsigned.ranges
 {
+  requires static com.io7m.immutables.style;
   requires static org.immutables.value;
 
   requires com.io7m.junreachable.core;
