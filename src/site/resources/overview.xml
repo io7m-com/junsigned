@@ -8,10 +8,6 @@
          <img src="https://img.shields.io/maven-central/v/com.io7m.junsigned/com.io7m.junsigned.png?style=flat-square"
               alt="Maven Central"/>
       </a>
-      <a href="https://www.codacy.com/app/github_79/junsigned">
-         <img src="https://img.shields.io/codacy/grade/8cb550f0475f43cb928cc7f2b3cb0380.png?style=flat-square"
-              alt="Codacy"/>
-      </a>
       <a href="https://codecov.io/gh/io7m/junsigned">
          <img src="https://img.shields.io/codecov/c/github/io7m/junsigned.png?style=flat-square"
               alt="Codecov"/>
