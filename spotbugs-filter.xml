@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+
+  <Match>
+    <Or>
+      <Class name="com.io7m.junsigned.ranges.UnsignedRangeInclusiveI"/>
+      <Class name="com.io7m.junsigned.ranges.UnsignedRangeInclusiveL"/>
+    </Or>
+  </Match>
+
+  <Match>
+    <Or>
+      <Bug pattern="IMC_IMMATURE_CLASS_NO_TOSTRING"/>
+      <Bug pattern="OPM_OVERLY_PERMISSIVE_METHOD"/>
+      <Bug pattern="DRE_DECLARED_RUNTIME_EXCEPTION"/>
+      <Bug pattern="FCCD_FIND_CLASS_CIRCULAR_DEPENDENCY"/>
+    </Or>
+  </Match>
+
+</FindBugsFilter>

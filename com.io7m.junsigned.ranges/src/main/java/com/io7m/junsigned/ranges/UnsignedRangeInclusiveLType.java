@@ -1,5 +1,5 @@
 /*
- * Copyright © 2017 <code@io7m.com> http://io7m.com
+ * Copyright © 2017 Mark Raynsford <code@io7m.com> https://www.io7m.com
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -16,7 +16,7 @@
 
 package com.io7m.junsigned.ranges;
 
-import com.io7m.jranges.RangeImmutableStyleType;
+import com.io7m.immutables.styles.ImmutablesStyleType;
 import org.immutables.value.Value;
 
 import java.util.Objects;
@@ -25,7 +25,7 @@ import java.util.Objects;
  * An inclusive range with {@code long} components.
  */
 
-@RangeImmutableStyleType
+@ImmutablesStyleType
 @Value.Immutable
 public interface UnsignedRangeInclusiveLType
 {
