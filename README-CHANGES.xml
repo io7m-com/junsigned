@@ -41,7 +41,7 @@
     </c:release>
     <c:release date="2019-06-23T20:44:41+00:00" ticket-system="com.github.io7m.junsigned" version="3.0.0">
       <c:changes>
-        <c:change compatible="false" date="2019-06-23T20:44:41+00:00" summary="Require JDK 11"/>
+        <c:change compatible="false" date="2022-04-09T20:44:41+00:00" summary="Require JDK 17"/>
       </c:changes>
     </c:release>
   </c:releases>
