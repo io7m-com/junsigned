@@ -41,9 +41,9 @@
   </licenses>
 
   <scm>
-    <url>https://github.com/io7m/junsigned</url>
-    <connection>scm:git:https://github.com/io7m/junsigned</connection>
-    <developerConnection>scm:git:https://github.com/io7m/junsigned</developerConnection>
+    <url>https://www.github.com/io7m-com/junsigned</url>
+    <connection>scm:git:https://www.github.com/io7m-com/junsigned</connection>
+    <developerConnection>scm:git:https://www.github.com/io7m-com/junsigned</developerConnection>
   </scm>
 
   <developers>
@@ -56,7 +56,7 @@
   </developers>
 
   <issueManagement>
-    <url>https://github.com/io7m/junsigned/issues</url>
+    <url>https://www.github.com/io7m-com/junsigned/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
 
@@ -74,7 +74,7 @@
 
   <ciManagement>
     <system>GitHub Actions</system>
-    <url>https://github.com/junsigned/actions</url>
+    <url>https://www.github.com/io7m-com/junsigned/actions</url>
   </ciManagement>
 
   <prerequisites>
