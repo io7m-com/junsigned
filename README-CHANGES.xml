@@ -44,10 +44,11 @@
         <c:change compatible="false" date="2022-04-09T00:00:00+00:00" summary="Require JDK 17"/>
       </c:changes>
     </c:release>
-    <c:release date="2024-05-16T10:30:25+00:00" is-open="true" ticket-system="com.github.io7m.junsigned" version="4.0.0">
+    <c:release date="2024-05-16T10:35:12+00:00" is-open="false" ticket-system="com.github.io7m.junsigned" version="4.0.0">
       <c:changes>
+        <c:change date="2024-04-19T00:00:00+00:00" summary="Update org.immutables:value:2.10.0 → 2.10.1."/>
         <c:change date="2024-05-16T00:00:00+00:00" summary="Upgrade com.io7m.jranges:com.io7m.jranges.core 5.0.0 → 6.0.0."/>
-        <c:change compatible="false" date="2024-05-16T10:30:25+00:00" summary="Require JDK 21."/>
+        <c:change compatible="false" date="2024-05-16T00:00:00+00:00" summary="Require JDK 21."/>
       </c:changes>
     </c:release>
   </c:releases>
